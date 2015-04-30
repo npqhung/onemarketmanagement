@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>          
+    <Environment name="applicationSettings" type="java.lang.String" value="classpath:configuration.properties"/>
+</Context>
