@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context>          
+<Context antiJARLocking="true">       
+    
+    <Loader loaderClass="org.springframework.instrument.classloading.tomcat.TomcatInstrumentableClassLoader"/>
+    
+    <Resource name="jdbc/OneMarket" 
+                  auth="Container" 
+                  type="javax.sql.DataSource" 
+                  factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
+                  username="onemarket" 
+                  password="onemarket" 
+                  driverClassName="com.mysql.jdbc.Driver"
+                  url="jdbc:mysql://localhost:3306/onemarket"/>
+       
     <Environment name="applicationSettings" type="java.lang.String" value="classpath:configuration.properties"/>
 </Context>

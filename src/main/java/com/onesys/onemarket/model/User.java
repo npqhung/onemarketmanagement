@@ -1,14 +1,25 @@
 package com.onesys.onemarket.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="User")
 public class User {
-	private String id;	
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Id
+	private Integer id;
+	
 	private String firstname;
 	private String lastname;
 	
-	public String getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	

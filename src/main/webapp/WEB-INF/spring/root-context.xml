@@ -4,24 +4,39 @@
 	xmlns:jee="http://www.springframework.org/schema/jee"
 	xmlns:p="http://www.springframework.org/schema/p"
 	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 						http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
-						http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+						http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+						http://www.springframework.org/schema/tx
+	 	 				http://www.springframework.org/schema/tx/spring-tx.xsd">
 	
     <context:property-placeholder location="${applicationSettings}"/>
     
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	
-	<!--  <bean id="dataSource"
-      class="org.springframework.jdbc.datasource.DriverManagerDataSource"
-      p:driverClassName="com.hxtt.sql.dbf.DBFDriver"  p:url="${jdbc.url}" />
-	
-	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
-		<property name="dataSource" ref="dataSource"></property>
-	</bean>
-	
-	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">        
-        <property name="maxUploadSize" value="2048000"/>            
-    </bean>	
-	 -->	
+	<bean id="jpaVendorAdapter" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+	      <property name="showSql" value="false"/>
+	      <property name="generateDdl" value="true"/>	      
+	 </bean>
+	   	 
+	<bean id="myEmf"
+	 class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"	 
+	 	p:jpaVendorAdapter-ref="jpaVendorAdapter">
+	    <property name="dataSource" ref="dataSource" />
+	  <!-- the packages to scan will look up all java class with the entity annotation hence do not require the persistance.xml file  -->
+	    <property name="packagesToScan" value="com.onesys.onemarket.model" />
+	    <property name="jpaProperties">
+	        <props> 
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>				   
+			</props> 
+	    </property>	    
+	 </bean>
+	 
+	 <bean id="txManager" class="org.springframework.orm.jpa.JpaTransactionManager" >
+	       <property name="entityManagerFactory" ref="myEmf" />
+	   </bean>
+	   <tx:annotation-driven transaction-manager="txManager" /> 
+	 
+	 	
 </beans>
