@@ -41,6 +41,9 @@ Ext.define('OM.controller.LoginController', {
 	    loginPanel.hide();	    
 		viewport.show();
 		
+		//register UserTabController
+		this.getController("UserTabController");
+		
 		this.getUsergrid().store.loadPage(1);
 	}
 });

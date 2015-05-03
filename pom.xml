@@ -57,6 +57,7 @@
 		<groupId>org.springframework</groupId>
 		<artifactId>spring-instrument-tomcat</artifactId>
 		<version>4.1.6.RELEASE</version>
+		<scope>runtime</scope>
 	</dependency>
     
     <!-- Hibernate -->

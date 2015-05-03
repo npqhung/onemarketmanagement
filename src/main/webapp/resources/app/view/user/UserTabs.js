@@ -6,7 +6,8 @@ Ext.define('OM.view.user.UserTabs', {
     	'Ext.tab.Tab',        
         'Ext.tab.Panel',
         
-        'OM.view.user.UserGrid'
+        'OM.view.user.UserGrid',
+        'OM.view.user.UserGroupGrid'
     ],
     
     tabPosition: 'bottom',
@@ -31,7 +32,8 @@ Ext.define('OM.view.user.UserTabs', {
                     itemId : 'usergrouptab',
                     items: [
                         {
-                            xtype: 'panel'
+                            xtype: 'usergroupgrid',
+                            itemId : 'usergroupgrid'
                         }
                     ]
                 }   

@@ -10,25 +10,25 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.onesys.onemarket.model.User;
-import com.onesys.onemarket.service.UserService;
+import com.onesys.onemarket.model.UserGroup;
+import com.onesys.onemarket.service.UserGroupService;
 import com.onesys.onemarket.utils.AppResponse;
 
 @Controller
 @RequestMapping("/service")
-public class UserController {
+public class UserGroupController {
 	
 	@Autowired
-	UserService userService;
+	UserGroupService userGroupService;
 	
-	@RequestMapping(value="/getUsers")
+	@RequestMapping(value="/getUserGroups")
 	@ResponseBody
-	public AppResponse getUsers(HttpServletRequest request,
+	public AppResponse getUserGroups(HttpServletRequest request,
 			@RequestParam("sort") String sort, @RequestParam("dir") String dir){
 	
 		AppResponse response = new AppResponse();
 		
-		List<User> data = userService.getAllUser(sort, dir);
+		List<UserGroup> data = userGroupService.getAllUserGroup(sort, dir);
 		
 		response.setSuccess(true);
 		
