@@ -26,6 +26,7 @@ public class UserGroupDAO implements UserGroupDaoInterface{
 		this.em = em;
 	}
 		
+	@Transactional(propagation=Propagation.REQUIRED)
 	public List<UserGroup> getAllUserGroup(String sort, String dir){
 		Query query= em.createQuery("select a FROM UserGroup a ORDER BY a."
 				+ sort + " " + dir);
@@ -34,7 +35,8 @@ public class UserGroupDAO implements UserGroupDaoInterface{
 		
 		return userList;		
 	}
-	
+
+	@Transactional(propagation=Propagation.REQUIRED)
 	public void insertUserGroup(UserGroup userGroup) throws Exception {
 		em.persist(userGroup);
 	}

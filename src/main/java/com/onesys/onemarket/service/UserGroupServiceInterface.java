@@ -13,7 +13,8 @@ public interface UserGroupServiceInterface {
 	
 	@Transactional(propagation=Propagation.REQUIRED)
 	public List<UserGroup> getAllUserGroup(String sort, String dir);
-		
+
+	@Transactional(propagation=Propagation.REQUIRED)
 	public void insertUserGroup(UserGroup userGroup) throws Exception;
 	
 }
