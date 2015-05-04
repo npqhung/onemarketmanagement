@@ -13,6 +13,7 @@ Ext.define('OM.store.User', {
 	proxy: {
         type: 'rest',
         api: {            
+        	create: OM.config.Global.getAppPath() + 'addUser',
             read: OM.config.Global.getAppPath() + 'getUsers',        
             update : OM.config.Global.getAppPath() + 'updateUser',
             destroy: OM.config.Global.getAppPath() + 'deleteUser'

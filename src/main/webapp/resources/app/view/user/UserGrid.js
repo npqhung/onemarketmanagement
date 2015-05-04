@@ -8,7 +8,8 @@ Ext.define('OM.view.user.UserGrid',{
 	           'Ext.form.field.Text',
 	           'Ext.toolbar.TextItem',
 	           'Ext.toolbar.Paging',
-	           'OM.store.User'
+	           'OM.store.User',
+	           'OM.view.user.UserWindow'
 	       ],
 	       
 	initComponent : function(){
@@ -16,6 +17,7 @@ Ext.define('OM.view.user.UserGrid',{
 		me.store = me.buildStore();
 		me.columns = me.buildColumns();
 		me.bbar = me.buildPaging();
+		me.userwindow = me.buildUserWindow();
 		me.callParent();
 	},
 	
@@ -71,7 +73,12 @@ Ext.define('OM.view.user.UserGrid',{
 		return Ext.create('OM.store.User');
 	},
 	
+	buildUserWindow : function(){
+		return Ext.create('widget.userwindow');
+	},
+	
     onDestroy : function(){    
+    	this.userwindow.destroy();
         this.callParent(arguments);
     }
 });

@@ -13,6 +13,7 @@ Ext.define('OM.store.UserGroup', {
 	proxy: {
         type: 'rest',
         api: {            
+        	create: OM.config.Global.getAppPath() + 'addUserGroup',
             read: OM.config.Global.getAppPath() + 'getUserGroups',        
             update : OM.config.Global.getAppPath() + 'updateUserGroup',
             destroy: OM.config.Global.getAppPath() + 'deleteUserGroup'

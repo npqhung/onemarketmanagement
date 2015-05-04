@@ -8,7 +8,8 @@ Ext.define('OM.view.user.UserGroupGrid',{
 	           'Ext.form.field.Text',
 	           'Ext.toolbar.TextItem',
 	           'Ext.toolbar.Paging',
-	           'OM.store.UserGroup'
+	           'OM.store.UserGroup',
+	           'OM.view.user.UserGroupWindow'
 	       ],
 	       
 	initComponent : function(){
@@ -16,6 +17,7 @@ Ext.define('OM.view.user.UserGroupGrid',{
 		me.store = me.buildStore();
 		me.columns = me.buildColumns();
 		me.bbar = me.buildPaging();
+		me.usergroupwindow = me.buildUserGroupWindow();
 		me.callParent();
 	},
 	
@@ -65,7 +67,12 @@ Ext.define('OM.view.user.UserGroupGrid',{
 		return Ext.create('OM.store.UserGroup');
 	},
 	
+	buildUserGroupWindow : function(){
+		return Ext.create('widget.usergroupwindow');
+	},
+	
     onDestroy : function(){    
+    	this.usergroupwindow.destroy();
         this.callParent(arguments);
     }
 });
