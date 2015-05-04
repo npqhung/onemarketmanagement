@@ -14,12 +14,11 @@
     <context:property-placeholder location="${applicationSettings}"/>
     
 	<!-- Root Context: defines shared resources visible to all other web components -->
+	<context:annotation-config />
 	<context:component-scan base-package=
-	    "com.onesys.onemarket.service
-	     com.onesys.onemarket.controller,
+	    "com.onesys.onemarket.service	     
 	     com.onesys.onemarket.dao"/>
-	 <context:annotation-config/>
-	
+	 	
 	<bean id="jpaVendorAdapter" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
 	      <property name="showSql" value="true"/>
 	      <property name="generateDdl" value="true"/>
@@ -28,7 +27,8 @@
 	<bean id="myEmf"
 	 class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"	 
 	 	p:jpaVendorAdapter-ref="jpaVendorAdapter">
-	    <property name="dataSource" ref="dataSource" />
+	    <property name="persistenceUnitName" value="pu" />
+	    <property name="dataSource" ref="dataSource" />	    
 	  <!-- the packages to scan will look up all java class with the entity annotation hence do not require the persistance.xml file  -->
 	    <property name="packagesToScan" value="com.onesys.onemarket.model" />
 	    <property name="jpaProperties">

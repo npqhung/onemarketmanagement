@@ -28,6 +28,7 @@
 	<!-- For Deployment, using production : http://localhost:8080/billviewv3/index.html -->
 	<!-- <resources mapping="/**" location="/resources/build/production/OM/" /> --> 
 	 
-    <context:component-scan base-package="com.onesys.onemarket" />
+	<context:annotation-config />
+    <context:component-scan base-package="com.onesys.onemarket.controller" />
 	
 </beans:beans>

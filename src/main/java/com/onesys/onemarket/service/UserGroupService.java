@@ -21,7 +21,7 @@ public class UserGroupService implements UserGroupServiceInterface{
 		return userGroupDAO.getAllUserGroup(sort, dir);
 	}
 
-	@Transactional(propagation=Propagation.REQUIRED)
+	@Transactional(propagation=Propagation.REQUIRES_NEW)
 	public void insertUserGroup(UserGroup userGroup) throws Exception{
 		userGroupDAO.insertUserGroup(userGroup);
 	}

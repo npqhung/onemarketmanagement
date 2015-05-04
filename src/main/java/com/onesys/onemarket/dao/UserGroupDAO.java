@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.onesys.onemarket.model.UserGroup;
 
-@Repository
+@Repository("userGroupDAO")
 public class UserGroupDAO implements UserGroupDaoInterface{
 
 	@PersistenceContext

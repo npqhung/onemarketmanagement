@@ -11,7 +11,7 @@ public interface UserGroupDaoInterface {
 	@Transactional(propagation=Propagation.REQUIRED)	
 	public List<UserGroup> getAllUserGroup(String sort, String dir);
 
-	@Transactional(propagation=Propagation.REQUIRED)
+	@Transactional(propagation=Propagation.REQUIRES_NEW)
 	public void insertUserGroup(UserGroup userGroup) throws Exception;
 
 }
