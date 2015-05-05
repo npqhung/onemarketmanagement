@@ -22,11 +22,11 @@ Ext.define('OM.controller.Main', {
     appTabChange: function ( tabPanel, newCard, oldCard, eOpts ){
    	    var tabname = tabPanel.getActiveTab().getItemId();
    	    if(tabname == "usertabs"){
-   	    	alert('usertabs');   	    	
+//   	    	alert('usertabs');   	    	
    	    }else if(tabname == "producttabs") {
-   	    	alert('producttabs')
+//   	    	alert('producttabs');
    	    }else if(tabname == "locationtabs"){
-   			alert('locationtabs');	    	
+//   			alert('locationtabs');	    	
    	    }   
    	       
    }

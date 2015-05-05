@@ -1,6 +1,6 @@
 Ext.define('OM.model.UserModel', {
 	extend: 'Ext.data.Model',
 	fields:[ 		
-		'id','username','firstname', 'lastname','email','password'		
+		'id','username','firstname', 'lastname','email','password','staffstatus','datejoined','lastlogin','groupname'				
 	] 
 });

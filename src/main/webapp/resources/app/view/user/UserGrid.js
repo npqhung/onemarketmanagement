@@ -2,14 +2,15 @@ Ext.define('OM.view.user.UserGrid',{
 	extend : 'Ext.grid.Panel',	
 	border : true,
 	alias : 'widget.usergrid',	
-	title : 'Users',
+//	title : 'Users',
 	layout : 'fit',  
 	requires: [	           
 	           'Ext.form.field.Text',
 	           'Ext.toolbar.TextItem',
 	           'Ext.toolbar.Paging',
 	           'OM.store.User',
-	           'OM.view.user.UserWindow'
+	           'OM.view.user.UserWindow',
+	           'Ext.grid.column.Check'
 	       ],
 	       
 	initComponent : function(){
@@ -31,9 +32,9 @@ Ext.define('OM.view.user.UserGrid',{
         }
         , 
    	   {
-    	   text: 'Update',
+    	   text: 'Delete',
     	   icon : '',
-          itemId : 'userupdate'
+          itemId : 'usergriddelete'
         }]
 	           
 	   	}],      
@@ -54,7 +55,19 @@ Ext.define('OM.view.user.UserGrid',{
 			},		
 			{
 				text:'Email Address',dataIndex:'email',flex:1 
-			}	
+			},
+			{
+				xtype:'checkcolumn',text:'Staff Status',dataIndex:'staffstatus',flex:1 
+			},
+			{
+				text:'Date Joined',dataIndex:'datejoined',flex:1,renderer: this.formatTime 
+			},
+			{
+				text:'Last Login',dataIndex:'lastlogin',flex:1,renderer: this.formatTime 
+			},
+			{
+				text:'Group Name',dataIndex:'groupname',flex:1 
+			}		
 		];
 	},
 	
@@ -76,6 +89,15 @@ Ext.define('OM.view.user.UserGrid',{
 	buildUserWindow : function(){
 		return Ext.create('widget.userwindow');
 	},
+	
+	formatTime : function(value){
+    	if(value){
+	    	var date = new Date(value);
+	    	return date.toDateString();
+    	}
+    	
+    	return "";
+    },
 	
     onDestroy : function(){    
     	this.userwindow.destroy();

@@ -23,27 +23,52 @@ Ext.define('OM.view.Main', {
 	        	{
 	        		xtype : 'usertabs',
 	        		itemId : 'usertabs',
-	            	title: 'Users'
+	            	title: 'Admin'
 	            },
+	            {
+	            	xtype : 'panel',
+	            	itemId : 'gametabs',
+	            	title: 'Game'
+	            },	
+	            {
+	            	xtype : 'panel',
+	            	itemId : 'storetabs',
+	            	title: 'Store & Orders'
+	            },	            
 	            {
 	            	xtype : 'producttabs',
 	            	itemId : 'producttabs',
 	            	title: 'Product'
 	            },
 	            {
+	            	xtype : 'panel',
+	            	itemId : 'brandtabs',
+	            	title: 'Brand & Manufacturer'
+	            },	
+	            {
 	            	xtype : 'locationtabs',
 	            	itemId : 'locationtabs',
 	            	title: 'Location'
-	            },	            
+	            },	     
 	            {
 	            	xtype : 'panel',
-	            	itemId : 'newtabs',
-	            	title: 'New Tab'
-	            },	            
+	            	itemId : 'newstabs',
+	            	title: 'News & Notification'
+	            },
+	            	{
+	            	xtype : 'panel',
+	            	itemId : 'generaltabs',
+	            	title: 'General'
+	            },
 	            {
 	            	xtype : 'panel',
-	            	itemId : 'newtabs1',
-	            	title: 'New Tab 1'
+	            	itemId : 'clienttabs',
+	            	title: 'Client'
+	            },
+	            {
+	            	xtype : 'panel',
+	            	itemId : 'faqtabs',
+	            	title: 'FAQ'
 	            }
 	        ]
     }]

@@ -2,7 +2,7 @@ Ext.define('OM.view.user.UserGroupGrid',{
 	extend : 'Ext.grid.Panel',	
 	border : true,
 	alias : 'widget.usergroupgrid',	
-	title : 'User Groups',
+//	title : 'User Groups',
 	layout : 'fit',  
 	requires: [	           
 	           'Ext.form.field.Text',
@@ -31,9 +31,9 @@ Ext.define('OM.view.user.UserGroupGrid',{
         }
         , 
    	   {
-    	   text: 'Update',
+    	   text: 'Delete',
     	   icon : '',
-          itemId : 'usergroupupdate'
+          itemId : 'usergroupgriddelete'
         }]
 	           
 	   	}],      
@@ -56,10 +56,16 @@ Ext.define('OM.view.user.UserGroupGrid',{
 		return Ext.create('Ext.PagingToolbar', {
            store: this.store,
            displayInfo: true,
-           displayMsg: 'Displaying User Groups {0} - {1} of {2}',
+           displayMsg: 'Displaying Admin Groups {0} - {1} of {2}',
            emptyMsg: "There's nothing here",
-           items:[                  
-                 ]           
+           items:[            
+              '-',
+              {	
+              		text : 'Export',
+               		itemId : 'exportinventorysn',
+               		tooltip: 'Export to Excel'
+              }
+                               ]           
        });
 	},
 

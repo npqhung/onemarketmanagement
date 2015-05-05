@@ -19,6 +19,14 @@ Ext.define('OM.controller.UserGroupController', {
 	        {
 	        	ref : 'usergroupform',
 	        	selector : 'usergroupform'
+	        },
+	        {
+	        	ref : 'usergroupgridpanel',
+	        	selector : '#usergroupgridpanel'
+	        },
+	        {
+	        	ref : 'usergroupformpanel',
+	        	selector : '#usergroupformpanel'
 	        }
 	    ],
 	
@@ -42,8 +50,11 @@ Ext.define('OM.controller.UserGroupController', {
 				click : function(btn) {
 					me.getUsergroupform().getForm().reset();
 				}
-			}
-										
+			},
+			
+			'usergroupgrid' : {
+			   itemdblclick: this.showUserGroupDetail
+			}										
 		});		
 	},
 	
@@ -72,6 +83,11 @@ Ext.define('OM.controller.UserGroupController', {
 			usergroupform.reset();
 			me.getUsergroupgrid().usergroupwindow.hide();
 		}
+	},
+	
+	showUserGroupDetail : function(dataview, record, item, index, e, eOpts) {
+	 	this.getUsergroupgridpanel().hide();
+	 	this.getUsergroupformpanel().show();
 	}
 });
 

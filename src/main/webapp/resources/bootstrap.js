@@ -848,15 +848,26 @@ Ext.ClassManager.addNameAlternateMappings({
   "OM.config.Global": [],
   "OM.controller.LoginController": [],
   "OM.controller.Main": [],
+  "OM.controller.UserGroupController": [],
+  "OM.controller.UserTabController": [],
+  "OM.model.UserGroupModel": [],
   "OM.model.UserModel": [],
   "OM.store.User": [],
+  "OM.store.UserGroup": [],
   "OM.view.LoginForm": [],
   "OM.view.Main": [],
   "OM.view.Viewport": [],
   "OM.view.location.LocationTabs": [],
   "OM.view.product.ProductTabs": [],
+  "OM.view.user.UserForm": [],
   "OM.view.user.UserGrid": [],
-  "OM.view.user.UserTabs": []
+  "OM.view.user.UserGroupForm": [],
+  "OM.view.user.UserGroupGrid": [],
+  "OM.view.user.UserGroupLayout": [],
+  "OM.view.user.UserGroupWindow": [],
+  "OM.view.user.UserLayout": [],
+  "OM.view.user.UserTabs": [],
+  "OM.view.user.UserWindow": []
 });
 Ext.ClassManager.addNameAliasMappings({
   "Ext.AbstractComponent": [],
@@ -1866,9 +1877,15 @@ Ext.ClassManager.addNameAliasMappings({
   "OM.config.Global": [],
   "OM.controller.LoginController": [],
   "OM.controller.Main": [],
+  "OM.controller.UserGroupController": [],
+  "OM.controller.UserTabController": [],
+  "OM.model.UserGroupModel": [],
   "OM.model.UserModel": [],
   "OM.store.User": [
     "widget.userstore"
+  ],
+  "OM.store.UserGroup": [
+    "widget.usergroupstore"
   ],
   "OM.view.LoginForm": [
     "widget.loginform"
@@ -1883,11 +1900,32 @@ Ext.ClassManager.addNameAliasMappings({
   "OM.view.product.ProductTabs": [
     "widget.producttabs"
   ],
+  "OM.view.user.UserForm": [
+    "widget.userform"
+  ],
   "OM.view.user.UserGrid": [
     "widget.usergrid"
   ],
+  "OM.view.user.UserGroupForm": [
+    "widget.usergroupform"
+  ],
+  "OM.view.user.UserGroupGrid": [
+    "widget.usergroupgrid"
+  ],
+  "OM.view.user.UserGroupLayout": [
+    "widget.usergrouplayout"
+  ],
+  "OM.view.user.UserGroupWindow": [
+    "widget.usergroupwindow"
+  ],
+  "OM.view.user.UserLayout": [
+    "widget.userlayout"
+  ],
   "OM.view.user.UserTabs": [
     "widget.usertabs"
+  ],
+  "OM.view.user.UserWindow": [
+    "widget.userwindow"
   ]
 });
 Ext.setVersion("ext-theme-base", "4.2.3.1475");

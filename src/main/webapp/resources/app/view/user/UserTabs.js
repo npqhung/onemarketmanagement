@@ -6,8 +6,8 @@ Ext.define('OM.view.user.UserTabs', {
     	'Ext.tab.Tab',        
         'Ext.tab.Panel',
         
-        'OM.view.user.UserGrid',
-        'OM.view.user.UserGroupGrid'
+        'OM.view.user.UserLayout',
+        'OM.view.user.UserGroupLayout'
     ],
     
     tabPosition: 'bottom',
@@ -16,24 +16,26 @@ Ext.define('OM.view.user.UserTabs', {
                 {
                     xtype: 'panel',
                     layout: 'fit',
-                    title: 'Users',
+                    title: 'Admin',
                     itemId: 'usertab',
                     items: [
                         {
-                            xtype: 'usergrid',
-                            itemId : 'usergrid'
+                            xtype: 'userlayout',
+                            itemId : 'userlayout',
+                            layout: 'fit'
                         }
                     ]
                 },
                 {
                     xtype: 'panel',
                     layout: 'fit',
-                    title: 'User Group',
+                    title: 'Admin Group',
                     itemId : 'usergrouptab',
                     items: [
                         {
-                            xtype: 'usergroupgrid',
-                            itemId : 'usergroupgrid'
+                            xtype: 'usergrouplayout',
+                            itemId : 'usergrouplayout',
+                            layout: 'fit'
                         }
                     ]
                 }   
