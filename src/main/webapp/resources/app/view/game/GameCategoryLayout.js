@@ -1,34 +1,34 @@
-Ext.define('OM.view.user.UserLayout', {
+Ext.define('OM.view.game.GameCategoryLayout', {
     extend: 'Ext.panel.Panel',
-    alias: 'widget.userlayout',
+    alias: 'widget.gamecategorylayout',
 
     requires: [    	
-        'OM.view.user.UserForm',
-        'OM.view.user.UserGrid'
+        'OM.view.game.GameCategoryForm',
+        'OM.view.game.GameCategoryGrid'
     ],
     
     items: [                   
                 {
                     xtype: 'panel',
                     layout: 'fit',
-                    itemId : 'usergridpanel',
-                    title: 'Admin Users',                    
+                    itemId : 'gamecategorygridpanel',
+                    title: 'Game Category',                    
                     items: [
                         {
-                            xtype: 'usergrid',
-                            itemId : 'usergrid'
+                            xtype: 'gamecategorygrid',
+                            itemId : 'gamecategorygrid'
                         }
                     ]
                 },
                 {
                     xtype: 'panel',
                     layout: 'fit',
-                    title: 'User Detail',
-                    itemId : 'userformpanel',                    
+                    title: 'Game',
+                    itemId : 'gamecategoryformpanel',                    
                     items: [
                         {
-                            xtype: 'userform',
-                            itemId : 'userform'
+                            xtype: 'gamecategoryform',
+                            itemId : 'gamecategoryform'
                         }
                     ],
                     hidden : true

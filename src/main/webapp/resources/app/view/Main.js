@@ -5,6 +5,7 @@ Ext.define('OM.view.Main', {
         'Ext.layout.container.Border',
         
         'OM.view.user.UserTabs',
+        'OM.view.game.GameTabs',
         'OM.view.product.ProductTabs',
         'OM.view.location.LocationTabs'        
     ],
@@ -26,7 +27,7 @@ Ext.define('OM.view.Main', {
 	            	title: 'Admin'
 	            },
 	            {
-	            	xtype : 'panel',
+	            	xtype : 'gametabs',
 	            	itemId : 'gametabs',
 	            	title: 'Game'
 	            },	

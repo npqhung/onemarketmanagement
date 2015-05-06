@@ -846,17 +846,31 @@ Ext.ClassManager.addNameAlternateMappings({
   ],
   "OM.Application": [],
   "OM.config.Global": [],
+  "OM.controller.AdminGroupController": [],
+  "OM.controller.AdminUserController": [],
+  "OM.controller.GameCategoryController": [],
+  "OM.controller.GameTabController": [],
   "OM.controller.LoginController": [],
   "OM.controller.Main": [],
-  "OM.controller.UserGroupController": [],
   "OM.controller.UserTabController": [],
+  "OM.model.GameCategoryModel": [],
+  "OM.model.GameListModel": [],
   "OM.model.UserGroupModel": [],
   "OM.model.UserModel": [],
+  "OM.store.GameCategory": [],
+  "OM.store.GameList": [],
   "OM.store.User": [],
   "OM.store.UserGroup": [],
   "OM.view.LoginForm": [],
   "OM.view.Main": [],
   "OM.view.Viewport": [],
+  "OM.view.game.GameCategoryForm": [],
+  "OM.view.game.GameCategoryGrid": [],
+  "OM.view.game.GameCategoryLayout": [],
+  "OM.view.game.GameListForm": [],
+  "OM.view.game.GameListGrid": [],
+  "OM.view.game.GameListLayout": [],
+  "OM.view.game.GameTabs": [],
   "OM.view.location.LocationTabs": [],
   "OM.view.product.ProductTabs": [],
   "OM.view.user.UserForm": [],
@@ -1875,12 +1889,23 @@ Ext.ClassManager.addNameAliasMappings({
   ],
   "OM.Application": [],
   "OM.config.Global": [],
+  "OM.controller.AdminGroupController": [],
+  "OM.controller.AdminUserController": [],
+  "OM.controller.GameCategoryController": [],
+  "OM.controller.GameTabController": [],
   "OM.controller.LoginController": [],
   "OM.controller.Main": [],
-  "OM.controller.UserGroupController": [],
   "OM.controller.UserTabController": [],
+  "OM.model.GameCategoryModel": [],
+  "OM.model.GameListModel": [],
   "OM.model.UserGroupModel": [],
   "OM.model.UserModel": [],
+  "OM.store.GameCategory": [
+    "widget.gamecategorystore"
+  ],
+  "OM.store.GameList": [
+    "widget.gameliststore"
+  ],
   "OM.store.User": [
     "widget.userstore"
   ],
@@ -1894,6 +1919,27 @@ Ext.ClassManager.addNameAliasMappings({
     "widget.app-main"
   ],
   "OM.view.Viewport": [],
+  "OM.view.game.GameCategoryForm": [
+    "widget.gamecategoryform"
+  ],
+  "OM.view.game.GameCategoryGrid": [
+    "widget.gamecategorygrid"
+  ],
+  "OM.view.game.GameCategoryLayout": [
+    "widget.gamecategorylayout"
+  ],
+  "OM.view.game.GameListForm": [
+    "widget.gamelistform"
+  ],
+  "OM.view.game.GameListGrid": [
+    "widget.gamelistgrid"
+  ],
+  "OM.view.game.GameListLayout": [
+    "widget.gamelistlayout"
+  ],
+  "OM.view.game.GameTabs": [
+    "widget.gametabs"
+  ],
   "OM.view.location.LocationTabs": [
     "widget.locationtabs"
   ],

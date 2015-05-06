@@ -1,4 +1,4 @@
-Ext.define('OM.controller.UserGroupController', {
+Ext.define('OM.controller.AdminGroupController', {
 	extend: 'Ext.app.Controller',
 	
 	models : [
@@ -54,7 +54,13 @@ Ext.define('OM.controller.UserGroupController', {
 			
 			'usergroupgrid' : {
 			   itemdblclick: this.showUserGroupDetail
-			}										
+			},
+			
+			'#usergroupback' : {
+				click : function(btn) {
+					me.backToAdminGroupList();					
+				}
+			}
 		});		
 	},
 	
@@ -88,6 +94,11 @@ Ext.define('OM.controller.UserGroupController', {
 	showUserGroupDetail : function(dataview, record, item, index, e, eOpts) {
 	 	this.getUsergroupgridpanel().hide();
 	 	this.getUsergroupformpanel().show();
+	},
+	
+	backToAdminGroupList : function(){
+		this.getUsergroupgridpanel().show();
+	 	this.getUsergroupformpanel().hide();
 	}
 });
 

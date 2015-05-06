@@ -27,6 +27,10 @@ Ext.define('OM.controller.Main', {
 //   	    	alert('producttabs');
    	    }else if(tabname == "locationtabs"){
 //   			alert('locationtabs');	    	
+   	    }else if(tabname == "gametabs") {
+   	    	//default
+   	    	var gamecategorycontroller = this.getController("GameCategoryController");
+   	    	gamecategorycontroller.loadGameCategory();   
    	    }   
    	       
    }

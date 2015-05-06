@@ -29,10 +29,11 @@ Ext.define('OM.controller.UserTabController', {
     userTabChange: function ( tabPanel, newCard, oldCard, eOpts ){
    	    var tabname = tabPanel.getActiveTab().getItemId();
    	    if(tabname == "usertab"){
-   	    	    	
+   	    	var admincontroller = this.getController("AdminUserController");
+   	    	admincontroller.loadAdminUser();    	
    	    }else if(tabname == "usergrouptab") {
-   	    	var usergroupcontroller = this.getController("UserGroupController");
-   	    	usergroupcontroller.loadUserGroup();
+   	    	var admingroupcontroller = this.getController("AdminGroupController");
+   	    	admingroupcontroller.loadUserGroup();
    	    }   	       
    }
 });

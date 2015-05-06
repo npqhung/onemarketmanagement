@@ -1,11 +1,9 @@
-Ext.define('OM.view.user.UserGroupForm', {
+Ext.define('OM.view.game.GameListForm', {
     extend: 'Ext.form.Panel',    
-    alias: 'widget.usergroupform',    
-    xtype : 'usergroupform',
+    alias: 'widget.gamelistform',    
+    xtype : 'gamelistform',
     requires: [
-    	'Ext.form.field.Text',
-    	'Ext.ux.form.ItemSelector',
-    	'Ext.data.ArrayStore'
+    	'Ext.form.field.Text'
     ],
     
     bodyPadding: 20,
@@ -24,41 +22,7 @@ Ext.define('OM.view.user.UserGroupForm', {
 	         name: 'description',		   		         
 	         itemId : 'usergroupdescription',
 	         width: 350
-        },
-        {
-	            xtype: 'itemselector',
-	            name: 'snmgrtitle',	            
-	            style:'margin-top:10px',
-	            anchor: '100%',
-	            fieldLabel: 'Permissions',
-	            imagePath: '../ux/images/',
-	
-	            store: Ext.create('Ext.data.ArrayStore', {
-			        data: [
-							['Permission 1', 'per1'],
-							['Permission 2', 'per2'],
-							['Permission 3', 'per3'],
-							['Permission 4', 'per4'],
-							['Permission 5', 'per5'],
-							['Permission 6', 'per6'],
-							['Permission 7', 'per7'],
-							['Permission 8', 'per8'],
-							['Permission 9', 'per9'],
-							['Permission 10', 'per10'],
-							['Permission 11', 'per11'],
-							['Permission 12', 'per12']							
-			        ], //store is available
-			        fields: ['text','value']
-			    }),
-	            displayField: 'text',
-	            valueField: 'value',
-	            value: [''],// value = selected
-	
-	            allowBlank: false,
-	            // minSelections: 2,
-	            // maxSelections: 3,
-	            msgTarget: 'side'
-	        }   
+        }
     ],
     
     dockedItems: [
@@ -73,7 +37,7 @@ Ext.define('OM.view.user.UserGroupForm', {
                       style: 'margin-left:14px',
                       text: 'Back',
                       tooltip: 'Back',
-                      itemId : 'usergroupback'
+                      itemId : 'gamecategoryback'
                   }               
               ]
           },
@@ -88,13 +52,13 @@ Ext.define('OM.view.user.UserGroupForm', {
                     xtype: 'button',
                     text: 'Save',
                     width: 60,
-                    itemId : 'usergroupdetailsave'
+                    itemId : 'gamecategorydetailsave'
                 },                
                 {
                     xtype: 'button',
                     text: 'Delete',
                     width: 60,
-                    itemId : 'usergroupdetaildelete'
+                    itemId : 'gamecategorydetaildelete'
                 }
             ]
         }
